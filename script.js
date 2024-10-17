@@ -20,7 +20,6 @@ function tap(event) {
     else if (counter == 8) {
         header.innerText = 'Ничья!';
     }
-
     counter++;
     event.target.removeEventListener('click', tap);
 }
