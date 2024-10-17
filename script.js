@@ -23,7 +23,6 @@ function isVictory() {
 }
 
 
-
 function tap(event) {
     if (counter % 2 == 0) {
         event.target.innerHTML = '<img src="masunya.png" width=100>';
@@ -46,6 +45,19 @@ function tap(event) {
     else if (counter == 8) {
         header.innerText = 'Ничья!';
     }
+
     counter++;
     event.target.removeEventListener('click', tap);
 }
+
+
+function startGame() {
+    header.innerText = 'Симики - Масюники';
+    counter = 0;
+    for (var cell of cells) {
+        cell.innerHTML = '';
+        cell.addEventListener('click', tap);
+    }
+}
+
+startGame()
